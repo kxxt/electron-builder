@@ -18,6 +18,7 @@ export interface CliOptions extends PackagerOptions, PublishOptions {
   armv7l?: boolean
   arm64?: boolean
   universal?: boolean
+  riscv64?: boolean
 
   dir?: boolean
 }
@@ -47,6 +48,9 @@ export function normalizeOptions(args: CliOptions): BuildOptions {
       }
       if (args.universal) {
         result.push(Arch.universal)
+      }
+      if (args.riscv64) {
+        result.push(Arch.riscv64)
       }
 
       return result.length === 0 && currentIfNotSpecified ? [archFromString(process.arch)] : result
@@ -122,6 +126,7 @@ export function normalizeOptions(args: CliOptions): BuildOptions {
   delete result.armv7l
   delete result.arm64
   delete result.universal
+  delete result.riscv64
 
   let config = result.config
 
@@ -260,6 +265,11 @@ export function configureBuildCommand(yargs: yargs.Argv): yargs.Argv {
     .option("universal", {
       group: buildGroup,
       description: "Build for universal",
+      type: "boolean",
+    })
+    .option("riscv64", {
+      group: buildGroup,
+      description: "Build for riscv64",
       type: "boolean",
     })
     .option("dir", {
