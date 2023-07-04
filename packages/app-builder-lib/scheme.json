@@ -6296,6 +6296,7 @@
                   "arm64",
                   "armv7l",
                   "ia32",
+                  "riscv64",
                   "universal",
                   "x64"
                 ],
@@ -6308,6 +6309,7 @@
                 "arm64",
                 "armv7l",
                 "ia32",
+                "riscv64",
                 "universal",
                 "x64"
               ],
