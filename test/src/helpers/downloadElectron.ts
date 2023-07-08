@@ -54,6 +54,10 @@ export function downloadAllRequiredElectronVersions(): Promise<any> {
         // https://www.electronjs.org/docs/latest/breaking-changes#removed-ia32-linux-binaries
         continue
       }
+      if (arch === "riscv64") {
+        // No prebuilt electron for riscv64
+        continue
+      }
       versions.push({
         version: ELECTRON_VERSION,
         arch,
