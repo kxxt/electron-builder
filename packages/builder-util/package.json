@@ -1,5 +1,5 @@
 {
-  "name": "builder-util",
+  "name": "@riscv-forks/builder-util",
   "version": "24.9.4",
   "main": "out/util.js",
   "author": "Vladimir Krivosheev",
