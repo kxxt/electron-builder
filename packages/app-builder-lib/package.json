@@ -1,5 +1,5 @@
 {
-  "name": "app-builder-lib",
+  "name": "@riscv-forks/app-builder-lib",
   "description": "electron-builder lib",
   "version": "25.1.8",
   "main": "out/index.js",
